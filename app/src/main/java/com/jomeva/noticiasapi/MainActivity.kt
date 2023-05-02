@@ -31,7 +31,8 @@ class MainActivity : AppCompatActivity() {
     }
     fun getNoticias(fechaActual: LocalDate) {
       CoroutineScope(Dispatchers.IO).launch {
-          val call=INoticias.retrofit.create(INoticias::class.java).ontenerNoticias("?q=tesla&from=$fechaActual&sortBy=publishedAt&apiKey=fe0a5477c0074b38ad75ada54fb268aa")
+
+          val call=INoticias.retrofit.create(INoticias::class.java).ontenerNoticias("?q=tesla&from=2023-04-02&sortBy=publishedAt&apiKey=fe0a5477c0074b38ad75ada54fb268aa")
           val noticias=call.body()
 val noti=noticias
 
